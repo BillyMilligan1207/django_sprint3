@@ -102,4 +102,3 @@ class Post(PublishedModel):
 
     def __str__(self) -> str:
         return self.title[:TEXT_LIMIT_LEN]
-    
