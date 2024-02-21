@@ -18,6 +18,7 @@ def get_published_posts(*args, **kwargs):
         **kwargs
     )
 
+
 class Meta:
     ordering = ['-pub_date']
 

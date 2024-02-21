@@ -96,7 +96,7 @@ class Post(PublishedModel):
         related_name='posts',
     )
 
-    #не совсем понял, в какую Мета модель перенести related_name, в обе переносил - ошибка
+    # не совсем понял, в какую Мета модель перенести related_name
 
     class Meta:
         verbose_name = 'публикация'
