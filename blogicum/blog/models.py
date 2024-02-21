@@ -4,7 +4,7 @@ from django.db import models
 
 User = get_user_model()
 
-TEXT_LIMIT_LEN = 30
+TEXT_LIMIT_LEN: int = 30
 
 
 class PublishedModel(models.Model):
@@ -95,6 +95,8 @@ class Post(PublishedModel):
         verbose_name='Категория',
         related_name='posts',
     )
+
+    #не совсем понял, в какую Мета модель перенести related_name, в обе переносил - ошибка
 
     class Meta:
         verbose_name = 'публикация'

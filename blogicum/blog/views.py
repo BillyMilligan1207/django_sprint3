@@ -3,7 +3,7 @@ from django.utils import timezone
 
 from .models import Category, Post
 
-RELATED_POSTS_LEN = 5
+RELATED_POSTS_LEN: int = 5
 
 
 def get_published_posts(*args, **kwargs):
@@ -16,7 +16,10 @@ def get_published_posts(*args, **kwargs):
         pub_date__lte=timezone.now(),
         category__is_published=True,
         **kwargs
-    ).order_by('-pub_date')
+    )
+
+class Meta:
+    ordering = ['-pub_date']
 
 
 def index(request):
