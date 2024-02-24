@@ -72,7 +72,6 @@ class Post(PublishedModel):
         User,
         on_delete=models.CASCADE,
         verbose_name='Автор публикации',
-        related_name='posts',
     )
     pub_date = models.DateTimeField(
         'Дата и время публикации',
@@ -85,7 +84,6 @@ class Post(PublishedModel):
         null=True,
         blank=True,
         verbose_name='Местоположение',
-        related_name='posts',
     )
     category = models.ForeignKey(
         Category,
@@ -93,14 +91,17 @@ class Post(PublishedModel):
         null=True,
         blank=False,
         verbose_name='Категория',
-        related_name='posts',
     )
 
-    # не совсем понял, в какую Мета модель перенести related_name
 
     class Meta:
         verbose_name = 'публикация'
         verbose_name_plural = 'Публикации'
+        default_related_name = 'posts'
+        ordering = ('-pub_date',)
 
     def __str__(self) -> str:
         return self.title[:TEXT_LIMIT_LEN]
+# я изначально хотел бы Ваш контакт в пачке, но нигде не мог найти
+# поэтому буду благодарен, если подскажете, и потом удалю этот коммент)
+    

@@ -19,10 +19,6 @@ def get_published_posts(*args, **kwargs):
     )
 
 
-class Meta:
-    ordering = ['-pub_date']
-
-
 def index(request):
     post_list = get_published_posts()[:RELATED_POSTS_LEN]
     return render(request, 'blog/index.html', context={'post_list': post_list})
