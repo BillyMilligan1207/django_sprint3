@@ -93,16 +93,13 @@ class Post(PublishedModel):
         verbose_name='Категория',
     )
 
-
     class Meta:
         verbose_name = 'публикация'
         verbose_name_plural = 'Публикации'
         default_related_name = 'posts'
         ordering = ('-pub_date',)
 
-
     def __str__(self) -> str:
         return self.title[:TEXT_LIMIT_LEN]
-    
-# я изначально хотел бы Ваш контакт в пачке, но нигде не мог найти
-# поэтому буду благодарен, если подскажете, и потом удалю этот коммент)
+    # я изначально хотел бы Ваш контакт в пачке, но нигде не мог найти
+    # поэтому буду благодарен, если подскажете, и потом удалю этот коммент)
